@@ -13,6 +13,7 @@ eskwds = (out_path="exams/", jupyter_path="$(homedir())/.julia/conda/3/bin/jupyt
 
 notebook("src/notes/A.Julia.jmd"; nkwds...)
 notebook("src/notes/B.Asymptotics.jmd"; nkwds...)
+notebook("src/notes/C.Adjoints.jmd"; nkwds...)
 
 
 # Part I
@@ -23,6 +24,7 @@ notebook("src/notes/I.4.DualNumbers.jmd"; nkwds...)
 
 # Part II
 notebook("src/notes/II.1.StructuredMatrices.jmd"; nkwds...)
+notebook("src/notes/II.2.OrthogonalMatrices.jmd"; nkwds...)
 
 
 #####
@@ -54,6 +56,10 @@ Literate.notebook("src/labs/lab2.jl", "labs/")
 Literate.notebook("src/labs/lab3s.jl", "labs/")
 write("src/labs/lab3.jl", replace(replace(read("src/labs/lab3s.jl", String), r"## SOLUTION(.*?)## END"s => ""), r"@test" => "@test_broken"))
 Literate.notebook("src/labs/lab3.jl", "labs/")
+
+Literate.notebook("src/labs/lab4s.jl", "labs/")
+write("src/labs/lab4.jl", replace(replace(read("src/labs/lab4s.jl", String), r"## SOLUTION(.*?)## END"s => ""), r"@test" => "@test_broken"))
+Literate.notebook("src/labs/lab4.jl", "labs/")
 
 
 ####
